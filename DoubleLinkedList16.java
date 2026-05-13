@@ -74,6 +74,18 @@ public class DoubleLinkedList16 {
 
     }
 
+    public void printReverse() {
+        if (isEmpty()) {
+            System.out.println("Linked List masih kosong.");
+        } else {
+            Node16 current = tail;
+            while (current != null) {
+                current.data.tampil();
+                current = current.prev;
+            }
+        }
+    }
+
     public void removeFirst() {
         if (isEmpty()) {
             System.out.println("Linked List kosong.");
