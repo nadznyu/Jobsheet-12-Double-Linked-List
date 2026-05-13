@@ -89,31 +89,33 @@ public class DoubleLinkedList16 {
     public void removeFirst() {
         if (isEmpty()) {
             System.out.println("Linked List kosong.");
-            return;
-        }
-
-        if (head == tail) {
-            head = tail = null;
         } else {
-            head = head.next;
-            head.prev = null;
+            System.out.println("Data yang berhasil dihapus: ");
+            head.data.tampil();
+
+            if (head == tail) {
+                head = tail = null;
+            } else {
+                head = head.next;
+                head.prev = null;
+            }
         }
-        System.out.println("Data berhasil dihapus.");
     }
 
     public void removeLast() {
         if (isEmpty()) {
             System.out.println("Linked List kosong.");
-            return;
-        }
-
-        if (head == tail) {
-            head = tail = null;
         } else {
-            tail = tail.prev;
-            tail.next = null;
+            System.out.println("Data yang berhasil dihapus:");
+            tail.data.tampil();
+
+            if (head == tail) {
+                head = tail = null;
+            } else {
+                tail = tail.prev;
+                tail.next = null;
+            }
         }
-        System.out.println("Data berhasil dihapus.");
     }
 
     static Mahasiswa16 inputMahasiswa(Scanner scan) {
