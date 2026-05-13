@@ -47,12 +47,12 @@ public class DoubleLinkedList16 {
 
         Node16 newNode16 = new Node16(data);
 
-        //jika current adalah tail, node baru ditambahkan di akhir
+        // jika current adalah tail, node baru ditambahkan di akhir
         if (current == tail) {
             newNode16.prev = current;
             current.next = newNode16;
             tail = newNode16;
-        } else { //node baru disisipkan di tengah
+        } else { // node baru disisipkan di tengah
             newNode16.prev = current;
             newNode16.next = current.next;
             current.next.prev = newNode16;
@@ -64,14 +64,14 @@ public class DoubleLinkedList16 {
     public void print() {
         if (isEmpty()) {
             System.out.println("Linked List masih kosong.");
-            return;
+        } else {
+            Node16 current = head;
+            while (current != null) {
+                current.data.tampil();
+                current = current.next;
+            }
         }
 
-        Node16 current = head;
-        while (current != null) {
-            current.data.tampil();
-            current = current.next;
-        }
     }
 
     public void removeFirst() {
